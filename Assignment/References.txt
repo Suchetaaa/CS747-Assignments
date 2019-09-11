@@ -1,0 +1,3 @@
+Pulp solvers for LP:
+http://benalexkeen.com/linear-programming-with-python-and-pulp-part-2/
+
