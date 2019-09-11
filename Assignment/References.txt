@@ -1,3 +1,6 @@
 Pulp solvers for LP:
 http://benalexkeen.com/linear-programming-with-python-and-pulp-part-2/
 
+For dict, sum, variables and other stuff:
+https://www.coin-or.org/PuLP/pulp.html#pulp.LpConstraint
+

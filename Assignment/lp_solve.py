@@ -7,6 +7,9 @@ import sys
 inp_file = sys.argv[1]
 states, actions, rewards, transitions, gamma, type_mdp = rt_gen(inp_file)
 
+if type_mdp == 'episodic':
+	gamma = 1
+	
 lp_problem = pulp.LpProblem("optimal_v", pulp.LpMinimize)
 
 state_nums = [p for p in xrange(0, states)]
