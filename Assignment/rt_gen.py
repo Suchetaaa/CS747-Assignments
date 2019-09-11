@@ -47,3 +47,5 @@ def rt_gen(inp_file):
 	print transitions
 	print gamma
 	print type_mdp
+
+	return states, actions, rewards, transitions, gamma, type_mdp
