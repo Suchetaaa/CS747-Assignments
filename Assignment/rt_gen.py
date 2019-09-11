@@ -16,7 +16,7 @@ def rt_gen(inp_file):
 		elif i == 1:
 			actions = int(f)
 		i += 1
-		print f
+		# print f
 
 	# print states, actions
 
@@ -43,9 +43,9 @@ def rt_gen(inp_file):
 			type_mdp = f
 		i += 1
 
-	print rewards
-	print transitions
-	print gamma
-	print type_mdp
+	# print rewards
+	# print transitions
+	# print gamma
+	# print type_mdp
 
 	return states, actions, rewards, transitions, gamma, type_mdp
