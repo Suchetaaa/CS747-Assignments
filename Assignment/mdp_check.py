@@ -9,9 +9,9 @@ reward_higher = 1
 states = 2
 actions = 2
 type_mdp = "continuous"
-discounts_1 = np.arange(0.01, 0.39, 0.001)
-discounts_2 = np.arange(0.41, 0.74, 0.001)
-discounts_3 = np.arange(0.76, 0.99, 0.001)
+discounts_1 = np.arange(0.01, 0.391, 0.0001)
+discounts_2 = np.arange(0.41, 0.741, 0.0001)
+discounts_3 = np.arange(0.76, 0.991, 0.0001)
 
 # print discounts_1
 # print discounts_2

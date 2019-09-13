@@ -25,11 +25,12 @@ def lp(states, actions, rewards, transitions, gamma, type_mdp):
 			q_func[s, a] = sum( (transitions[s, a, s_dash]*( rewards[s, a, s_dash] + gamma*pulp.value(state_variables[s_dash]))) for s_dash in xrange(0, states) )
 
 	best_policy = np.argmax(q_func, axis=1)
+	value_func = np.zeros(states, dtype=np.float128)
 
 	for x in xrange(0,states):
-		print pulp.value(state_variables[x])
-	print gamma
-	print best_policy
+		value_func[x] = pulp.value(state_variables[x])
+	# print gamma
+	# print best_policy
 	return best_policy
 
 # inp_file = sys.argv[1]
