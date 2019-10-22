@@ -1,0 +1,22 @@
+To understand the generation of random numbers using a seed: 
+https://www.pluralsight.com/guides/almost-random-numbers
+
+To use a numpy function to create incrementing consecutive numbers:
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.arange.html
+
+Multi-dimensional Numpy arrays:
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html
+
+For using relative paths:
+https://python.robasworld.com/python-relative-path/
+
+Save and Load numpy arrays:
+https://stackoverflow.com/questions/28439701/how-to-save-and-load-numpy-array-data-properly
+
+Taking arguments from the command line:
+https://www.pythonforbeginners.com/system/python-sys-argv
+
+**Mostly Numpy docs for all Numpy related doubts
+
+Bash Script Tutorials from the following Youtube channel: 
+https://www.youtube.com/watch?v=xtS2NiABf54
