@@ -1,0 +1,7 @@
+For lpi: 
+I used the method done in class. Basically, converting the policy evaluation problem to a linear programming problem and using Pulp solver to solve it. 
+
+For hpi:
+Again, same method taught in class. To find Q(s, a) in each iteration, I used a pulp solver again, except there wasn't any objective function but contraints which were merely equations. I could have used an Ax=b type of a method using linear algebra but found pulp convenient. 
+
+
