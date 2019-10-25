@@ -1,0 +1,3 @@
+Model-based RL :
+https://www.cse.iitb.ac.in/~shivaram/teaching/cs747-a2019/resources/classnote-2.pdf
+
