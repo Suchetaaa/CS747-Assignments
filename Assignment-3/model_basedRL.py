@@ -63,5 +63,5 @@ def model_basedRL(inp_file):
 
 
 if __name__ == '__main__':
-	inp_file = "/Users/suchetaaa/Desktop/Academics @IITB/Semester VII/FILA/FILA-Assignments/Assignment-3/data/d2.txt"
+	inp_file = sys.argv[1]
 	model_basedRL(inp_file)
