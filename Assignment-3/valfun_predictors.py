@@ -61,7 +61,64 @@ def model_basedRL(inp_file):
 		value_functions[s] = pulp.value(v_s[s])
 		print (value_functions[s])
 
+	value_functions_d1 = np.asarray([66.2637, 72.967])
+	value_functions_d2 = np.asarray([0.644577, 0.728381, 0.80263, 0.716817, 0.580511, 0.561383])
+	
+	# mse_d1 = (value_functions - value_functions_d1)**2
+	# mse_d1 = np.sum(mse_d1) 
+	# print (mse_d1)
+
+	# mse_d2 = (value_functions - value_functions_d2)**2
+	# mse_d2 = np.sum(mse_d2)
+	# print (mse_d2)
+
+def td_lambda(inp_file, lambda_, alpha_0):
+	[state_trajectory, action_trajectory, reward_trajectory, S, A, gamma] = parse(inp_file)
+
+	value_functions = np.zeros(S, dtype=np.float128)
+
+	eligibility_trace = np.zeros(S, dtype=float)
+
+	state = state_trajectory[0]
+	action = action_trajectory[0]
+	reward = reward_trajectory[0]
+
+	alpha = alpha_0
+
+	for x in range(1,len(state_trajectory)):
+		next_state = state_trajectory[x]
+
+		delta = reward + gamma*value_functions[next_state] - value_functions[state]
+		eligibility_trace[state] += 1
+		for p in range(0,S):
+			value_functions[p] = value_functions[p] + alpha*delta*eligibility_trace[p] 
+
+		eligibility_trace = [gamma*lambda_*eligibility_trace[s] for s in range(0, S)]
+
+		alpha = float(alpha_0)/(x+1)
+
+		if x != len(state_trajectory)-1:
+			state = state_trajectory[x]
+			action = action_trajectory[x]
+			reward = reward_trajectory[x]
+
+	for x in range(0,S):
+		print (value_functions[x])
+
+	value_functions_d1 = np.asarray([66.2637, 72.967])
+	value_functions_d2 = np.asarray([0.644577, 0.728381, 0.80263, 0.716817, 0.580511, 0.561383])
+	
+	# mse_d1 = (value_functions - value_functions_d1)**2
+	# mse_d1 = np.sum(mse_d1) 
+	# print (mse_d1)
+
+	mse_d2 = (value_functions - value_functions_d2)**2
+	mse_d2 = np.sum(mse_d2)
+	print (mse_d2)
 
 if __name__ == '__main__':
 	inp_file = sys.argv[1]
+	lambda_ = 1
+	alpha = 9
 	model_basedRL(inp_file)
+	# td_lambda(inp_file, lambda_, alpha)

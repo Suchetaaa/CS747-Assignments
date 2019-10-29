@@ -1,0 +1,31 @@
+Assignment - III 
+
+Sucheta 
+Roll num: 160040100
+
+---------------------------------
+
+I have tried two methods for predicting the value functions 
+of all the states - Model Based RL and TD (lambda)
+
+Model Based RL: Using the trajectory data given, found the 
+Transition Matrix (T), Reward (R) and policy used (pi(s, a)).
+Once we have T, R and pi, it is not hard to find V using LP 
+or solving linear equations. I used Linear Programming solver
+implemented in Assignment-2 
+
+TD (lambda): Initialized an elibility trace matrix and 
+followed the algorithm given in class notes. Tuned the values 
+of alpha, lambda and decay rate or learning rate to d2.txt
+
+But then it wasn't working that great for d1.txt and vice-versa 
+was observed when tuned to d1.txt and other data sets. 
+But in the model based RL, there wasn't any hyperparameter for 
+tuning and it worked decently well in all the cases unlike 
+TD (lambda).
+
+Therefore, I have used modelbasedRL method in evaulator.sh
+
+
+
+

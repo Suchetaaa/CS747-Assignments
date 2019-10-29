@@ -1,3 +1,9 @@
-Model-based RL :
+For T, R updation:
 https://www.cse.iitb.ac.in/~shivaram/teaching/cs747-a2019/resources/classnote-2.pdf
 
+My Assignment-2 code for LP Solver (for finding V)
+
+NumPy Documentation
+https://numpy.org/doc
+
+Class notes for TD (lambda)

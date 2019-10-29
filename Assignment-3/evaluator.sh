@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python3 model_basedRL.py $1
+python3 valfun_predictors.py $1
