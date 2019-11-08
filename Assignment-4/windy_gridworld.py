@@ -1,9 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt 
 import random
+import sys
 
 def nextstate_reward(num_rows, num_columns, wind_dist, start_block, goal_block, present_state, action, stochastic, seed):
-	# np.random.seed(seed)
 	reward = -1
 	if stochastic == 0:
 		wind_strength = wind_dist[int(present_state[1])]
@@ -73,7 +73,7 @@ def sarsa_on_policy(num_rows, num_columns, num_actions, num_episodes, wind_dist,
 	episodes_steps = np.zeros(num_episodes, dtype=float)
 
 	for n in range(0, num_runs):
-		print (n)
+		# print (n)
 		seed = 2*n
 		# np.random.seed(seed)
 		for x in range(0,num_episodes):
@@ -101,9 +101,9 @@ if __name__ == '__main__':
 	
 	num_rows = 7
 	num_columns = 10
-	alpha = 0.5
-	epsilon = 0.1
-	num_episodes = 170
+	alpha = float(sys.argv[1])
+	epsilon = float(sys.argv[2])
+	num_episodes = int(sys.argv[3])
 	num_runs = 10
 	num_actions = 4
 	gamma = 1
@@ -133,11 +133,38 @@ if __name__ == '__main__':
 	times3[1:] = episodes_steps3
 	y3 = np.zeros(len(episodes3)+1)
 	y3[1:] = episodes3
+	
+	# print (y1)
+	# print (y2)
+	# print (y3)
 
-	plt.plot(times1, y1, label="Normal")
-	plt.plot(times2, y2, label="King's Moves")
-	plt.plot(times3, y3, label="King's Moves with Stochasticity")
-	plt.legend(loc='upper left')
+	plt.figure()
+	plt.plot(times1, y1)
+	plt.title("Basic Windy Gridworld, learning rate={}, epsilon={}".format(alpha, epsilon))
+	plt.xlabel("Time Steps")
+	plt.ylabel("Episodes")
+	plt.show()
+
+	plt.figure()
+	plt.plot(times2, y2)
+	plt.title("Kings Moves Windy Gridworld, learning rate={}, epsilon={}".format(alpha, epsilon))
+	plt.xlabel("Time Steps")
+	plt.ylabel("Episodes")
+	plt.show()
+
+	plt.figure()
+	plt.plot(times3, y3)
+	plt.title("Kings Moves & Stochastic Wind, learning rate={}, epsilon={}".format(alpha, epsilon))
+	plt.xlabel("Time Steps")
+	plt.ylabel("Episodes")
+	plt.show()
+
+	plt.figure()
+	plt.plot(times1, y1, label="Basic")
+	plt.plot(times2, y2, label="With king's moves")
+	plt.plot(times3, y3, label="King's moves & stochastic wind")
+	plt.title("Windy Gridworld, learning rate={}, epsilon={}".format(alpha, epsilon))
+	plt.legend(loc='lower right')
 	plt.xlabel("Time Steps")
 	plt.ylabel("Episodes")
 	plt.show()

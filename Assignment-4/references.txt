@@ -1,0 +1,6 @@
+for SARSA and Problem statement:
+Sutton and Barto (Page 130 & 131)
+
+Numpy Docs
+
+Matplotlib Docs
